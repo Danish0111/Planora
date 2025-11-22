@@ -38,9 +38,9 @@ const MyTasks = () => {
   }
   return (
     <div>
-      <div className="flex justify-between items-center p-5">
-        <h1 className="text-2xl font-semibold p-2">My Tasks</h1>
-        <div className="flex justify-center items-center gap-4">
+      <div className="flex max-md:items-start flex-col md:flex-row justify-between items-center p-5 ">
+        <h1 className="text-2xl font-semibold p-2 mt-4">My Tasks</h1>
+        <div className="flex justify-center items-center gap-4 m-2">
           <TaskStatusTabs tabs={statusTabs} activeTab={filterStatus} setActiveTab={setFilterStatus} />
         </div>
       </div>

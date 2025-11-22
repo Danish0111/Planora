@@ -59,7 +59,7 @@ const TeamMembers = () => {
         <h1 className="text-2xl font-semibold p-2">Team Members</h1>
         <button type="button" onClick={()=> handleDownloadReport()} className='flex justify-center items-center gap-2 font-medium bg-[#dbfd9c] p-2 rounded-lg text-sm border border-[#bef852] hover:cursor-pointer'>
           <FileSpreadsheet className='size-5' />
-          <p className="">Download Report</p>
+          <p className="hidden md:block">Download Report</p>
         </button>
       </div>
       <div className="grid max-md:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mx-6 gap-4 mb-6">

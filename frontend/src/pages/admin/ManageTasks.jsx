@@ -58,14 +58,21 @@ const ManageTasks = () => {
   }
   return (
     <div>
-      <div className="flex justify-between items-center p-5">
-        <h1 className="text-2xl font-semibold p-2">My Tasks</h1>
-        <div className="flex justify-center items-center gap-4">
+      <div className="flex flex-col p-5">
+        <div className="flex justify-between items-center">
+          <h1 className="text-2xl font-semibold p-2">My Tasks</h1>
+          <div className="flex justify-center items-center gap-4">
+            <div className="hidden min-lg:block">
+              <TaskStatusTabs tabs={statusTabs} activeTab={filterStatus} setActiveTab={setFilterStatus} />
+            </div>
+            <button type="button" onClick={() => handleDownloadReport()} className='flex justify-center items-center gap-2 font-medium bg-[#dbfd9c] p-2 rounded-lg text-sm border border-[#bef852] hover:cursor-pointer'>
+              <FileSpreadsheet className='size-5' />
+              <p className="hidden md:block">Download Report</p>
+            </button>
+          </div>
+        </div>
+        <div className="min-lg:hidden">
           <TaskStatusTabs tabs={statusTabs} activeTab={filterStatus} setActiveTab={setFilterStatus} />
-          <button type="button" onClick={()=> handleDownloadReport()} className='flex justify-center items-center gap-2 font-medium bg-[#dbfd9c] p-2 rounded-lg text-sm border border-[#bef852] hover:cursor-pointer'>
-            <FileSpreadsheet className='size-5' />
-            <p className="">Download Report</p>
-          </button>
         </div>
       </div>
       <div className="grid max-md:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mx-6 gap-4 mb-6">

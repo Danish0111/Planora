@@ -33,14 +33,14 @@ const TodoListInput = ({ todoList, setTodoList }) => {
                     value={option}
                     onChange={(e) => setOption(e.target.value)}
                     placeholder="Enter Task"
-                    className="flex-1 border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:border-blue-500"
+                    className="flex-1 border border-gray-300 rounded-lg w-20 px-4 py-2 focus:outline-none focus:border-blue-500"
                 />
                 <button
                     type="button"
                     onClick={() => handleAddOption()}
                     className="bg-blue-600/20 text-blue-600 rounded-lg px-4 py-2 hover:bg-blue-600/30 flex items-center gap-1 hover:cursor-pointer"
                 >
-                    <Plus size={16} className="" /> Add
+                    <Plus size={16} className="" /> <span className='hidden md:block'>Add</span>
                 </button>
             </div>
         </div>

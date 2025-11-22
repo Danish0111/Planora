@@ -1,4 +1,4 @@
-import { LayoutDashboard, List, PlusSquare, User, Users, LogOut, Menu, X } from 'lucide-react'
+import { LayoutDashboard, List, PlusSquare, User, Users, LogOut, Menu, X, ListCollapse, ChevronLeft } from 'lucide-react'
 import { NavLink } from 'react-router-dom'
 import { useState } from 'react'
 import { useAuthStore } from '../../store/useAuthStore'
@@ -27,7 +27,7 @@ const AdminSidebar = () => {
     const SidebarContent = () => (
         <>
             <div className="p-4">
-                <div className="flex flex-col items-center justify-center p-4">
+                <div className="flex flex-col items-center justify-center pt-16 md:p-4">
                     {authUser?.profileImageUrl ? (
                         <img className='w-16 h-16 md:w-20 md:h-20 rounded-full object-cover' src={authUser?.profileImageUrl} alt="Profile" />
                     ) : (
@@ -111,6 +111,15 @@ const AdminSidebar = () => {
                 flex flex-col overflow-y-auto
             `}>
                 <SidebarContent />
+                {isMobileMenuOpen && (
+                    <button
+                        onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                        className="lg:hidden fixed top-12 right-0 z-50 p-2 bg-white rounded-lg shadow-lg border border-gray-200"
+                        aria-label="Toggle menu"
+                    >
+                        <ChevronLeft className="w-6 h-6 text-gray-600" />
+                    </button>
+                )}
             </aside>
         </>
     )
